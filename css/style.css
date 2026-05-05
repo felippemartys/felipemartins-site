@@ -281,8 +281,7 @@ p {
 
 /* MOBILE */
 @media (max-width: 768px) {
-
-  /* CORREÇÃO IMAGENS MOBILE */
+  /* Alteração do layout para coluna no mobile */
   .section .container{
     flex-direction: column !important;
     align-items: center;
@@ -299,9 +298,9 @@ p {
   }
 
   .media img{
-    width: 100%;
-    max-width: 100%;
-    height: auto;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
   }
 
   .text{
@@ -309,15 +308,16 @@ p {
     text-align: center;
   }
 
-  /* Ajuste específico para seções Khomp e AWS para ocupar largura maior */
+  /* Ajuste para as imagens Khomp e AWS ocuparem toda a largura no mobile */
   .section.right .media img,
   .section.left .media img {
-    max-width: 90%; /* Garante que ocupem mais espaço */
-    height: auto;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
   }
 
-  /* Ajuste para garantir que as imagens fiquem bem proporcionais */
+  /* Garante que as imagens ocupem toda a largura do container */
   .media img {
-    object-fit: cover; /* Faz com que as imagens cubram o container */
+    object-fit: cover !important;
   }
 }
