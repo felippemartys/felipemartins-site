@@ -168,16 +168,16 @@ p {
   margin: 0 auto 40px;
 }
 
-.cert-grid{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Desktop: 3 certificados lado a lado */
+/* FLEX LADO A LADO */
+.cert-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
-  justify-items: center;
-  max-width: 900px;
-  margin: 0 auto;
 }
 
 .cert-item {
+  flex: 0 0 250px; /* largura fixa para desktop */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -216,7 +216,21 @@ p {
 .cert-item p {
   margin-top: 10px;
   font-size: 14px;
-  max-width: 160px;
+  max-width: 250px;
+  text-align: center;
+}
+
+/* ALERTA ORACLE */
+.oracle-warning {
+  margin-top: 12px;
+  padding: 10px;
+  background: rgba(255, 0, 0, 0.08);
+  border-left: 3px solid #ff3b3b;
+  color: #ff3b3b;
+  font-size: 13px;
+  border-radius: 6px;
+  display: block;
+  text-align: left;
 }
 
 /* SCANNER EFFECT */
@@ -273,45 +287,81 @@ p {
   cursor: pointer;
 }
 
-/* ALERTA ORACLE DENTRO DO CERTIFICADO */
-.oracle-warning {
-  margin-top: 12px;
-  padding: 10px;
-  background: rgba(255, 0, 0, 0.08);
-  border-left: 3px solid #ff3b3b;
-  color: #ff3b3b;
-  font-size: 13px;
-  border-radius: 6px;
-  display: block;
+.validated {
+  margin-top: 20px;
+  color: #22c55e;
 }
 
 /* ========================= */
-/* LOADER TERMINAL */
+/* LOADER MODERNO */
 /* ========================= */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #020617;
+  display: flex; /* garante visibilidade */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
 .loader-content {
-  font-family: monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 3px solid rgba(56,189,248,0.2);
+  border-top: 3px solid #38bdf8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loader-name {
+  font-size: 26px;
+  letter-spacing: 4px;
   color: #38bdf8;
-  font-size: 15px;
-  line-height: 1.6;
+  position: relative;
+  animation: fadeIn 1.2s ease forwards;
 }
 
-#terminal::after {
-  content: "|";
-  animation: blink 1s infinite;
+.loader-name::after {
+  content: "Felipe Martins";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #38bdf8;
+  filter: blur(8px);
+  opacity: 0.5;
 }
 
-@keyframes blink {
-  50% { opacity: 0; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#loader.hide {
+  animation: fadeOut 0.8s ease forwards;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
 }
 
 /* ========================= */
-/* MOBILE / RESPONSIVO */
+/* RESPONSIVO */
 /* ========================= */
 @media (max-width: 1024px) {
-  /* Tablet: 2 certificados lado a lado */
-  .cert-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+  .cert-item {
+    flex: 0 0 45%; /* Tablet: dois certificados lado a lado */
   }
 }
 
@@ -323,8 +373,7 @@ p {
     text-align: center;
   }
 
-  .text,
-  .media {
+  .text, .media {
     width: 100%;
   }
 
@@ -347,16 +396,12 @@ p {
 
   /* Mobile: 1 certificado por linha */
   .cert-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
     gap: 20px;
   }
 
-  .cert-card {
-    width: 110px;
-    height: 110px;
-  }
-
-  .cert-item p {
-    font-size: 13px;
+  .cert-item {
+    flex: 0 0 110px;
   }
 }
