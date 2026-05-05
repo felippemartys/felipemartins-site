@@ -1,0 +1,296 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #020617;
+  color: #e5e7eb;
+  overflow-x: hidden;
+}
+
+/* BG */
+canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+/* SECTIONS */
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* CONTAINER */
+.container {
+  display: flex;
+  max-width: 1600px;
+  margin: auto;
+  padding: 0 80px;
+  gap: 80px;
+  align-items: center;
+}
+
+.section.right .container {
+  flex-direction: row-reverse;
+}
+
+/* TEXT */
+.text {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: 0.8s;
+}
+
+.section.show .text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* TITULOS */
+h1 {
+  font-size: 56px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  color: #38bdf8;
+}
+
+h3 {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+/* PARAGRAFOS */
+p {
+  font-size: 18px;
+  line-height: 2;
+  color: #9ca3af;
+  white-space: pre-line;
+}
+
+/* BOTÕES */
+.lang-buttons {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+}
+
+.lang-buttons button {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  background: transparent;
+  color: #38bdf8;
+  cursor: pointer;
+}
+
+.lang-buttons .active {
+  background: #38bdf8;
+  color: #020617;
+}
+
+/* MEDIA */
+.media {
+  width: 55%;
+}
+
+.media img {
+  width: 100%;
+  max-width: 700px;
+}
+
+/* EXPERIÊNCIA */
+.experience-grid {
+  display: flex;
+  gap: 60px;
+}
+
+.experience-column {
+  width: 50%;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    padding: 40px;
+  }
+
+  .text,
+  .media {
+    width: 100%;
+  }
+
+  .experience-grid {
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+}
+
+/* LOADER */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #020617;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#loader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* ========================= */
+/* CERTIFICAÇÕES */
+/* ========================= */
+
+.cert-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.cert-header {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cert-header h2 {
+  font-size: 34px;
+}
+
+.cert-header p {
+  font-size: 16px;
+}
+
+.cert-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  flex-wrap: nowrap; /* 🔥 mantém todos na mesma linha */
+}
+
+.cert-item {
+  width: 260px;
+  cursor: pointer;
+}
+
+.cert-card {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.cert-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* TEXTO */
+.cert-item p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+/* 🔦 SCANNER */
+.cert-card::before {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: 0;
+  width: 100%;
+  height: 80px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(56,189,248,0.2),
+    rgba(56,189,248,0.4),
+    rgba(56,189,248,0.2),
+    transparent
+  );
+
+  transform: rotate(10deg);
+  opacity: 0;
+}
+
+.cert-item.scan .cert-card::before {
+  animation: scanMove 1.2s ease-in-out;
+}
+
+@keyframes scanMove {
+  0% { top: -120%; opacity: 0; }
+  15% { opacity: 1; }
+  100% { top: 120%; opacity: 0; }
+}
+
+/* ========================= */
+/* MODAL */
+/* ========================= */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #0b0f14;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+  text-align: center;
+  border: 1px solid rgba(56,189,248,0.2);
+}
+
+.close {
+  cursor: pointer;
+  float: right;
+}
+
+.validated {
+  margin-top: 20px;
+  color: #38bdf8;
+  font-weight: bold;
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  from { opacity: 0.6; }
+  to { opacity: 1; text-shadow: 0 0 10px #38bdf8; }
+}
