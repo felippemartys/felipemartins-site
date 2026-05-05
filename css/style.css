@@ -465,3 +465,12 @@ p {
     visibility: hidden;
   }
 }
+.modal-warning {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(255, 165, 0, 0.1);
+  color: #facc15;
+  font-size: 14px;
+  text-align: center;
+}
