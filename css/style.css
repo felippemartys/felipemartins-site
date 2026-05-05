@@ -331,4 +331,10 @@ p {
     height: auto;
     object-fit: cover;
   }
+
+  /* Certificados no mobile */
+  .cert-item {
+    flex: 0 0 100%;
+    max-width: 300px; /* Ajuste o tamanho para evitar que fiquem muito pequenos */
+  }
 }
