@@ -38,7 +38,6 @@ canvas {
   position: relative;
 }
 
-/* CONTAINER */
 .container {
   display: flex;
   max-width: 1600px;
@@ -52,6 +51,7 @@ canvas {
   flex-direction: row-reverse;
 }
 
+/* ========================= */
 /* TEXT */
 .text {
   width: 45%;
@@ -69,24 +69,9 @@ canvas {
 }
 
 /* TITLES */
-h1 {
-  font-size: 56px;
-  margin-bottom: 30px;
-  line-height: 1.2;
-}
-
-h2 {
-  font-size: 28px;
-  margin-top: 40px;
-  margin-bottom: 15px;
-  color: #38bdf8;
-}
-
-h3 {
-  font-size: 20px;
-  margin-top: 20px;
-  margin-bottom: 5px;
-}
+h1 { font-size: 56px; margin-bottom: 30px; line-height: 1.2; }
+h2 { font-size: 28px; margin-top: 40px; margin-bottom: 15px; color: #38bdf8; }
+h3 { font-size: 20px; margin-top: 20px; margin-bottom: 5px; }
 
 /* TEXT */
 p {
@@ -117,21 +102,11 @@ p {
 }
 
 /* IMAGE */
-.media {
-  width: 55%;
-}
-
-.media img {
-  width: 100%;
-  max-width: 700px;
-  display: block;
-  margin: auto;
-}
+.media { width: 55%; }
+.media img { width: 100%; max-width: 700px; display: block; margin: auto; }
 
 /* HERO IMAGE */
-.hero-img img {
-  max-width: 500px;
-}
+.hero-img img { max-width: 500px; }
 
 /* EXPERIENCE */
 .experience-wrapper {
@@ -141,34 +116,16 @@ p {
   padding: 40px;
 }
 
-.experience-title {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.experience-grid {
-  display: flex;
-  gap: 60px;
-}
-
-.experience-column {
-  width: 50%;
-}
+.experience-title { text-align: center; margin-bottom: 40px; }
+.experience-grid { display: flex; gap: 60px; }
+.experience-column { width: 50%; }
 
 /* ========================= */
 /* CERTIFICAÇÕES */
-/* ========================= */
-.cert-wrapper {
-  width: 100%;
-  text-align: center;
-}
+.cert-wrapper { width: 100%; text-align: center; }
+.cert-header { max-width: 700px; margin: 0 auto 40px; }
 
-.cert-header {
-  max-width: 700px;
-  margin: 0 auto 40px;
-}
-
-/* FLEX LADO A LADO */
+/* FLEX LADO A LADO DESKTOP */
 .cert-grid {
   display: flex;
   flex-wrap: wrap;
@@ -177,7 +134,7 @@ p {
 }
 
 .cert-item {
-  flex: 0 0 250px; /* largura fixa para desktop */
+  flex: 0 0 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -205,20 +162,11 @@ p {
   box-shadow: 0 0 30px rgba(56,189,248,0.3);
 }
 
-/* IMAGEM PADRONIZADA */
-.cert-card img {
-  max-width: 80%;
-  max-height: 80%;
-  object-fit: contain;
-}
+/* IMAGEM PADRÃO */
+.cert-card img { max-width: 80%; max-height: 80%; object-fit: contain; }
 
 /* TEXTO */
-.cert-item p {
-  margin-top: 10px;
-  font-size: 14px;
-  max-width: 250px;
-  text-align: center;
-}
+.cert-item p { margin-top: 10px; font-size: 14px; max-width: 250px; text-align: center; }
 
 /* ALERTA ORACLE */
 .oracle-warning {
@@ -241,26 +189,15 @@ p {
   left: 0;
   width: 100%;
   height: 200%;
-  background: linear-gradient(
-    transparent,
-    rgba(56,189,248,0.3),
-    transparent
-  );
+  background: linear-gradient(transparent, rgba(56,189,248,0.3), transparent);
   opacity: 0;
 }
 
-.cert-item.scan .cert-card::after {
-  animation: scan 1.2s linear;
-}
-
-@keyframes scan {
-  0% { top: -100%; opacity: 1; }
-  100% { top: 100%; opacity: 0; }
-}
+.cert-item.scan .cert-card::after { animation: scan 1.2s linear; }
+@keyframes scan { 0% { top: -100%; opacity: 1; } 100% { top: 100%; opacity: 0; } }
 
 /* ========================= */
 /* MODAL */
-/* ========================= */
 .modal {
   display: none;
   position: fixed;
@@ -280,26 +217,16 @@ p {
   border: 1px solid rgba(56,189,248,0.3);
 }
 
-.close {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  cursor: pointer;
-}
-
-.validated {
-  margin-top: 20px;
-  color: #22c55e;
-}
+.close { position: absolute; right: 20px; top: 20px; cursor: pointer; }
+.validated { margin-top: 20px; color: #22c55e; }
 
 /* ========================= */
 /* LOADER MODERNO */
-/* ========================= */
 #loader {
   position: fixed;
   inset: 0;
   background: #020617;
-  display: flex; /* garante visibilidade */
+  display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
@@ -321,9 +248,7 @@ p {
   animation: spin 1s linear infinite;
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
+@keyframes spin { to { transform: rotate(360deg); } }
 
 .loader-name {
   font-size: 26px;
@@ -343,65 +268,35 @@ p {
   opacity: 0.5;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-#loader.hide {
-  animation: fadeOut 0.8s ease forwards;
-}
-
-@keyframes fadeOut {
-  to { opacity: 0; visibility: hidden; }
-}
+#loader.hide { animation: fadeOut 0.8s ease forwards; }
+@keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
 
 /* ========================= */
 /* RESPONSIVO */
-/* ========================= */
 @media (max-width: 1024px) {
-  .cert-item {
-    flex: 0 0 45%; /* Tablet: dois certificados lado a lado */
-  }
+  .cert-item { flex: 0 0 45%; }
 }
 
+/* MOBILE */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    padding: 30px 20px;
-    gap: 40px;
-    text-align: center;
-  }
-
-  .text, .media {
-    width: 100%;
-  }
-
+  .container { flex-direction: column; padding: 30px 20px; gap: 40px; text-align: center; }
+  .text, .media { width: 100%; }
   h1 { font-size: 32px; }
   h2 { font-size: 22px; }
   p { font-size: 15px; line-height: 1.7; }
+  .experience-grid { flex-direction: column; }
+  .experience-column { width: 100%; }
 
-  .media img {
-    max-width: 100%;
+  /* Certificados 1 por linha */
+  .cert-grid { flex-direction: column; align-items: center; gap: 20px; }
+  .cert-item { flex: 0 0 110px; }
+
+  /* Ajuste específico para seções Khomp e AWS para ocupar largura maior */
+  .section.right .media img,
+  .section.left .media img {
+    max-width: 90%;
     height: auto;
-  }
-
-  .experience-grid {
-    flex-direction: column;
-  }
-
-  .experience-column {
-    width: 100%;
-  }
-
-  /* Mobile: 1 certificado por linha */
-  .cert-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .cert-item {
-    flex: 0 0 110px;
   }
 }
