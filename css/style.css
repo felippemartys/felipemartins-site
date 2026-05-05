@@ -69,9 +69,24 @@ canvas {
 }
 
 /* TITLES */
-h1 { font-size: 56px; margin-bottom: 30px; line-height: 1.2; }
-h2 { font-size: 28px; margin-top: 40px; margin-bottom: 15px; color: #38bdf8; }
-h3 { font-size: 20px; margin-top: 20px; margin-bottom: 5px; }
+h1 { 
+  font-size: 56px; /* Tamanho original */
+  margin-bottom: 30px; 
+  line-height: 1.2; 
+}
+
+h2 { 
+  font-size: 28px; 
+  margin-top: 40px; 
+  margin-bottom: 15px; 
+  color: #38bdf8; 
+}
+
+h3 { 
+  font-size: 20px; 
+  margin-top: 20px; 
+  margin-bottom: 5px; 
+}
 
 /* TEXT */
 p {
@@ -102,11 +117,21 @@ p {
 }
 
 /* IMAGE */
-.media { width: 55%; }
-.media img { width: 100%; max-width: 700px; display: block; margin: auto; }
+.media { 
+  width: 55%; 
+}
+
+.media img { 
+  width: 100%; 
+  max-width: 700px; 
+  display: block; 
+  margin: auto; 
+}
 
 /* HERO IMAGE */
-.hero-img img { max-width: 500px; }
+.hero-img img { 
+  max-width: 500px; 
+}
 
 /* EXPERIENCE */
 .experience-wrapper {
@@ -163,10 +188,19 @@ p {
 }
 
 /* IMAGEM PADRÃO */
-.cert-card img { max-width: 80%; max-height: 80%; object-fit: contain; }
+.cert-card img { 
+  max-width: 80%; 
+  max-height: 80%; 
+  object-fit: contain; 
+}
 
 /* TEXTO */
-.cert-item p { margin-top: 10px; font-size: 14px; max-width: 250px; text-align: center; }
+.cert-item p { 
+  margin-top: 10px; 
+  font-size: 14px; 
+  max-width: 250px; 
+  text-align: center; 
+}
 
 /* ALERTA ORACLE */
 .oracle-warning {
@@ -276,7 +310,9 @@ p {
 /* ========================= */
 /* RESPONSIVO */
 @media (max-width: 1024px) {
-  .cert-item { flex: 0 0 45%; }
+  .cert-item { 
+    flex: 0 0 250px; /* Certificados lado a lado no desktop */
+  }
 }
 
 /* ========================= */
