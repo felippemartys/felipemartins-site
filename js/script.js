@@ -15,53 +15,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // ==========================
-// LOADER TERMINAL
+// LOADER SIMPLES
 // ==========================
 function initLoader(){
 
-  const terminal = document.getElementById("terminal");
-  if(!terminal) return;
-
-  const lines = [
-    "[ INITIALIZING TELECOM SYSTEM ]",
-    "> Loading VoIP modules...",
-    "> Validating SIP signaling...",
-    "> Checking RTP streams...",
-    "> Establishing SBC connection...",
-    "✔ System Ready"
-  ];
-
-  let lineIndex = 0;
-  let charIndex = 0;
-
-  function type(){
-
-    if(lineIndex < lines.length){
-
-      if(charIndex < lines[lineIndex].length){
-        terminal.textContent += lines[lineIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(type, 18);
-      } else {
-        terminal.textContent += "\n";
-        lineIndex++;
-        charIndex = 0;
-        setTimeout(type, 120);
-      }
-
-    } else {
-      setTimeout(() => {
-        const loader = document.getElementById("loader");
-        if(loader){
-          loader.classList.add("hide");
-        }
-      }, 600);
+  setTimeout(() => {
+    const loader = document.getElementById("loader");
+    if(loader){
+      loader.classList.add("hide");
     }
-  }
+  }, 1500);
 
-  type();
 }
-
 
 // ==========================
 // ANIMAÇÃO DE ENTRADA
