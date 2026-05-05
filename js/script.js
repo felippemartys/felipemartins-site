@@ -399,10 +399,22 @@ const certData = {
 };
 
 function openCert(key){
+
   const modal = document.getElementById("certModal");
 
-  document.getElementById("modalTitle").innerText = certData[key].title;
-  document.getElementById("modalText").innerText = certData[key].text;
+  const data = certData[key];
+
+  document.getElementById("modalTitle").innerText = data.title;
+  document.getElementById("modalText").innerText = data.text;
+
+  const warningEl = document.getElementById("modalWarning");
+
+  if(data.warning){
+    warningEl.innerText = data.warning;
+    warningEl.style.display = "block";
+  } else {
+    warningEl.style.display = "none";
+  }
 
   modal.style.display = "flex";
 }
