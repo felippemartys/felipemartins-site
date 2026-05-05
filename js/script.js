@@ -228,17 +228,6 @@ function initScroll(){
 // ==========================
 // BACKGROUND ANIMADO
 // ==========================
-function initBackground(){
-
-  const canvas = document.getElementById("bg");
-  if(!canvas) return;
-
-  const ctx = canvas.getContext("2d");
-  if(!ctx) return;
-
-  let w, h;
-  let nodes = [];
-  let pulses = [];
 
   function resize(){
     w = canvas.width = window.innerWidth;
