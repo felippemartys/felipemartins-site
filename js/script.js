@@ -3,13 +3,7 @@
 // ==========================
 document.addEventListener("DOMContentLoaded", () => {
 
-// LOADER
-setTimeout(() => {
-  const loader = document.getElementById("loader");
-  if(loader){
-    loader.classList.add("hide");
-  }
-}, 1500);
+  initLoader(); // 🔥 NOVO LOADER TERMINAL
 
   initObserver();
   initScroll();
@@ -18,6 +12,55 @@ setTimeout(() => {
   setLang(localStorage.getItem("lang") || "pt");
 
 });
+
+
+// ==========================
+// LOADER TERMINAL
+// ==========================
+function initLoader(){
+
+  const terminal = document.getElementById("terminal");
+  if(!terminal) return;
+
+  const lines = [
+    "[ INITIALIZING TELECOM SYSTEM ]",
+    "> Loading VoIP modules...",
+    "> Validating SIP signaling...",
+    "> Checking RTP streams...",
+    "> Establishing SBC connection...",
+    "✔ System Ready"
+  ];
+
+  let lineIndex = 0;
+  let charIndex = 0;
+
+  function type(){
+
+    if(lineIndex < lines.length){
+
+      if(charIndex < lines[lineIndex].length){
+        terminal.textContent += lines[lineIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 18);
+      } else {
+        terminal.textContent += "\n";
+        lineIndex++;
+        charIndex = 0;
+        setTimeout(type, 120);
+      }
+
+    } else {
+      setTimeout(() => {
+        const loader = document.getElementById("loader");
+        if(loader){
+          loader.classList.add("hide");
+        }
+      }, 600);
+    }
+  }
+
+  type();
+}
 
 
 // ==========================
@@ -138,7 +181,7 @@ Responsável por troubleshooting avançado de VoIP e análise de sinalização S
 
 
 // ==========================
-// TROCA DE IDIOMA (MANTIDO)
+// TROCA DE IDIOMA
 // ==========================
 function setLang(lang){
 
@@ -146,7 +189,6 @@ function setLang(lang){
 
   elements.forEach(el=>{
     const key = el.getAttribute("data-key");
-
     if(!key) return;
 
     const value =
@@ -167,7 +209,7 @@ function setLang(lang){
 
 
 // ==========================
-// SCROLL EFFECT (AJUSTADO SEM QUEBRAR)
+// SCROLL EFFECT
 // ==========================
 function initScroll(){
 
@@ -186,11 +228,9 @@ function initScroll(){
 
           const rect = section.getBoundingClientRect();
 
-          // 🔥 NOVO CÁLCULO MAIS SUAVE
           let progress = (windowHeight - rect.top) / (windowHeight + rect.height);
           progress = Math.max(0, Math.min(1, progress));
 
-          // 🔥 easing suave (efeito Apple)
           const ease = progress * progress * (3 - 2 * progress);
 
           const text = section.querySelector(".text");
@@ -220,10 +260,10 @@ function initScroll(){
 
 }
 
+
 // ==========================
 // BACKGROUND ANIMADO
 // ==========================
-
 function initBackground(){
 
   const canvas = document.getElementById("bg");
@@ -244,7 +284,7 @@ function initBackground(){
   window.addEventListener("resize", resize);
   resize();
 
-  const NODE_COUNT = 85; // 🔥 mais denso (antes 70)
+  const NODE_COUNT = 85;
 
   for(let i=0;i<NODE_COUNT;i++){
     nodes.push({
@@ -255,118 +295,20 @@ function initBackground(){
     });
   }
 
-  let mouse = { x: null, y: null };
-
-  window.addEventListener("mousemove", (e)=>{
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  });
-
-  let scrollFactor = 0;
-
-  window.addEventListener("scroll", ()=>{
-    scrollFactor = window.scrollY * 0.0006;
-  });
-
-  function createPulse(n1, n2){
-    pulses.push({
-      from: n1,
-      to: n2,
-      progress: 0,
-      speed: 0.015 + Math.random() * 0.02 // 🔥 mais rápido
-    });
-  }
-
   function draw(){
-
     ctx.clearRect(0,0,w,h);
 
-    // CONEXÕES
-    for(let i=0;i<nodes.length;i++){
-      for(let j=i+1;j<nodes.length;j++){
-
-        let dx = nodes[i].x - nodes[j].x;
-        let dy = nodes[i].y - nodes[j].y;
-        let dist = Math.sqrt(dx*dx + dy*dy);
-
-        if(dist < 160){ // 🔥 maior alcance
-
-          ctx.strokeStyle = `rgba(56,189,248,${1 - dist/160})`;
-          ctx.lineWidth = 1;
-
-          ctx.beginPath();
-          ctx.moveTo(nodes[i].x, nodes[i].y);
-          ctx.lineTo(nodes[j].x, nodes[j].y);
-          ctx.stroke();
-
-          // 🔥 MAIS PULSOS (antes quase não aparecia)
-          if(Math.random() < 0.006){
-            createPulse(nodes[i], nodes[j]);
-          }
-        }
-      }
-    }
-
-    // PULSOS
-    for(let i=pulses.length-1;i>=0;i--){
-
-      let p = pulses[i];
-      p.progress += p.speed;
-
-      const x = p.from.x + (p.to.x - p.from.x) * p.progress;
-      const y = p.from.y + (p.to.y - p.from.y) * p.progress;
-
-      const gradient = ctx.createRadialGradient(x,y,0,x,y,8);
-      gradient.addColorStop(0,"rgba(56,189,248,1)");
-      gradient.addColorStop(1,"rgba(56,189,248,0)");
-
-      ctx.fillStyle = gradient;
-
-      ctx.beginPath();
-      ctx.arc(x,y,3.5,0,Math.PI*2);
-      ctx.fill();
-
-      if(p.progress >= 1){
-        pulses.splice(i,1);
-      }
-    }
-
-    // INTERAÇÃO COM MOUSE
-    if(mouse.x){
-      nodes.forEach(n=>{
-        let dx = n.x - mouse.x;
-        let dy = n.y - mouse.y;
-        let dist = Math.sqrt(dx*dx + dy*dy);
-
-        if(dist < 200){
-          ctx.strokeStyle = "rgba(56,189,248,0.3)";
-          ctx.beginPath();
-          ctx.moveTo(n.x, n.y);
-          ctx.lineTo(mouse.x, mouse.y);
-          ctx.stroke();
-        }
-      });
-    }
-
-    // NÓS
     nodes.forEach(n=>{
-
-      const gradient = ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,6);
-      gradient.addColorStop(0,"rgba(56,189,248,0.9)");
-      gradient.addColorStop(1,"rgba(56,189,248,0)");
-
-      ctx.fillStyle = gradient;
-
       ctx.beginPath();
-      ctx.arc(n.x,n.y,2.5,0,Math.PI*2);
+      ctx.arc(n.x,n.y,2,0,Math.PI*2);
+      ctx.fillStyle="rgba(56,189,248,0.7)";
       ctx.fill();
 
       n.x += n.vx;
-      n.y += n.vy + scrollFactor;
+      n.y += n.vy;
 
-      if(n.x < 0 || n.x > w) n.vx *= -1;
-      if(n.y < 0 || n.y > h) n.vy *= -1;
-
+      if(n.x<0||n.x>w) n.vx*=-1;
+      if(n.y<0||n.y>h) n.vy*=-1;
     });
 
     requestAnimationFrame(draw);
@@ -377,9 +319,8 @@ function initBackground(){
 
 
 // ==========================
-// CERTIFICAÇÕES - SCANNER + MODAL
+// CERTIFICAÇÕES
 // ==========================
-
 function initCertSystem(){
 
   const items = document.querySelectorAll(".cert-item");
@@ -387,8 +328,6 @@ function initCertSystem(){
   const observer = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){
-
-        // scanner effect
         entry.target.classList.add("scan");
 
         setTimeout(()=>{
@@ -401,23 +340,26 @@ function initCertSystem(){
   items.forEach(i=>observer.observe(i));
 }
 
-// MODAL DATA
+
+// ==========================
+// MODAL CERT
+// ==========================
 const certData = {
   "wireshark": {
     title: "Wireshark",
-    text: "Análise avançada de pacotes SIP/RTP em troubleshooting de voz. Utilizado para diagnóstico de latência, jitter e falhas de sinalização."
+    text: "Análise avançada de pacotes SIP/RTP em troubleshooting de voz."
   },
   "khomp-kmg": {
     title: "Khomp KMG",
-    text: "Configuração de gateways de voz, análise de call flow SIP, troubleshooting de troncos E1 e SIP trunk."
+    text: "Configuração de gateways de voz e análise SIP."
   },
   "khomp-vsbc": {
     title: "Khomp vSBC",
-    text: "Segurança e controle de chamadas VoIP, roteamento avançado e proteção de borda SIP em ambientes corporativos."
+    text: "Controle e segurança de chamadas VoIP."
   },
   "cybersecurity": {
     title: "Cybersecurity",
-    text: "Introdução à cibersegurança com foco em proteção de redes, análise de ameaças, identificação de vulnerabilidades e boas práticas de segurança em ambientes corporativos."
+    text: "Fundamentos de segurança de redes e análise de vulnerabilidades."
   }
 };
 
@@ -425,7 +367,6 @@ function openCert(key){
   const modal = document.getElementById("certModal");
   document.getElementById("modalTitle").innerText = certData[key].title;
   document.getElementById("modalText").innerText = certData[key].text;
-
   modal.style.display = "flex";
 }
 
@@ -433,7 +374,8 @@ function closeCert(){
   document.getElementById("certModal").style.display = "none";
 }
 
-// init
+
+// INIT CERT
 document.addEventListener("DOMContentLoaded", ()=>{
   initCertSystem();
 });
