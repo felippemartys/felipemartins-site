@@ -300,3 +300,18 @@ p {
     height: auto;
   }
 }
+/* ========================= */
+/* MOBILE - Ajuste imagens Khomp e AWS */
+@media (max-width: 768px) {
+  /* Ajuste para as imagens AWS e Khomp ocuparem maior largura no mobile */
+  .section.right .media img,
+  .section.left .media img {
+    max-width: 90%; /* Garante que ocupem mais espaço */
+    height: auto;
+  }
+
+  /* Ajuste para garantir que as imagens fiquem bem proporcionais */
+  .media img {
+    object-fit: cover; /* Faz com que as imagens cubram o container */
+  }
+}
