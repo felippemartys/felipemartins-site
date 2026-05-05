@@ -279,19 +279,46 @@ p {
   .cert-item { flex: 0 0 45%; }
 }
 
-/* MOBILE */
+/* ========================= */
+/* CORREÇÃO IMAGENS MOBILE */
+/* ========================= */
 @media (max-width: 768px) {
-  /* Layout ajustado para o mobile */
-  .container {
-    flex-direction: column;
-    padding: 30px 20px;
-    gap: 40px;
+  .section .container {
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  .section.right .container {
+    flex-direction: column !important;
+  }
+
+  /* Ajuste para garantir que o texto esteja acima da imagem no mobile */
+  .media {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Dá um espaço entre o texto e a imagem */
+  }
+
+  .media img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .text {
+    width: 100% !important;
     text-align: center;
   }
 
-  .text, .media {
+  /* Certificando-se de que a imagem ocupa toda a largura disponível */
+  .section.left .media img,
+  .section.right .media img {
     width: 100%;
+    height: auto;
+    object-fit: cover; /* Garante que a imagem cubra o container de forma proporcional */
   }
+}
 
   /* Ajuste do título */
   h1 {
@@ -318,19 +345,6 @@ p {
     flex: 0 0 100%;
   }
 
-  /* Ajuste para a foto */
-  .hero-img img {
-    max-width: 100%;
-  }
-
-  /* Ajustes para Khomp e AWS */
-  .section.right .media img,
-  .section.left .media img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
 
   /* Experiências - Actionline e Betta em coluna */
   .experience-grid {
@@ -347,3 +361,4 @@ p {
     max-width: 300px; /* Ajuste o tamanho para evitar que fiquem muito pequenos */
   }
 }
+
