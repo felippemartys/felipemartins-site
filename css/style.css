@@ -14,6 +14,7 @@ body {
   background: #020617;
   color: #e5e7eb;
   overflow-x: hidden;
+  overflow-anchor: none;
 }
 
 /* BG */
@@ -28,6 +29,7 @@ canvas {
   min-height: 100vh;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 /* CONTAINER */
@@ -60,10 +62,11 @@ canvas {
   transform: translateY(0);
 }
 
-/* TITULOS */
+/* TITLES */
 h1 {
   font-size: 56px;
   margin-bottom: 30px;
+  line-height: 1.2;
 }
 
 h2 {
@@ -76,38 +79,38 @@ h2 {
 h3 {
   font-size: 20px;
   margin-top: 20px;
+  margin-bottom: 5px;
 }
 
-/* PARAGRAFOS */
+/* TEXT */
 p {
   font-size: 18px;
   line-height: 2;
+  margin-bottom: 15px;
   color: #9ca3af;
   white-space: pre-line;
 }
 
-/* BOTÕES */
+/* BUTTONS */
 .lang-buttons {
   margin: 20px 0;
-  display: flex;
-  gap: 10px;
 }
 
 .lang-buttons button {
-  padding: 8px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  background: transparent;
-  color: #38bdf8;
+  margin-right: 10px;
+  padding: 6px 14px;
+  border: none;
+  background: #38bdf8;
+  color: #020617;
   cursor: pointer;
+  border-radius: 4px;
 }
 
 .lang-buttons .active {
-  background: #38bdf8;
-  color: #020617;
+  background: #0ea5e9;
 }
 
-/* MEDIA */
+/* IMAGE */
 .media {
   width: 55%;
 }
@@ -115,9 +118,28 @@ p {
 .media img {
   width: 100%;
   max-width: 700px;
+  display: block;
+  margin: auto;
 }
 
-/* EXPERIÊNCIA */
+/* HERO IMAGE */
+.hero-img img {
+  max-width: 500px;
+}
+
+/* EXPERIENCE */
+.experience-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px;
+}
+
+.experience-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
 .experience-grid {
   display: flex;
   gap: 60px;
@@ -127,133 +149,92 @@ p {
   width: 50%;
 }
 
-/* RESPONSIVO */
-@media (max-width: 900px) {
-  .container {
-    flex-direction: column;
-    padding: 40px;
-  }
-
-  .text,
-  .media {
-    width: 100%;
-  }
-
-  .experience-grid {
-    flex-direction: column;
-  }
-
-  h1 {
-    font-size: 36px;
-  }
-}
-
-/* LOADER */
-#loader {
-  position: fixed;
-  inset: 0;
-  background: #020617;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-#loader.hide {
-  opacity: 0;
-  visibility: hidden;
-}
-
 /* ========================= */
 /* CERTIFICAÇÕES */
 /* ========================= */
 
 .cert-wrapper {
   width: 100%;
-  max-width: 1200px;
-  margin: auto;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
 }
 
 .cert-header {
   max-width: 700px;
-  margin: 0 auto;
-}
-
-.cert-header h2 {
-  font-size: 34px;
-}
-
-.cert-header p {
-  font-size: 16px;
+  margin: 0 auto 40px;
 }
 
 .cert-grid {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 50px;
-  flex-wrap: nowrap; /* 🔥 mantém todos na mesma linha */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-items: center;
 }
 
 .cert-item {
-  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   cursor: pointer;
 }
 
+/* CARD PADRÃO */
 .cert-card {
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.02);
+  border-radius: 12px;
+  border: 1px solid rgba(56,189,248,0.2);
   position: relative;
-  width: 160px;
-  height: 160px;
-  margin: auto;
   overflow: hidden;
+  transition: 0.3s;
 }
 
+/* HOVER */
+.cert-item:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 0 30px rgba(56,189,248,0.3);
+}
+
+/* IMAGEM PADRONIZADA */
 .cert-card img {
-  width: 100%;
-  height: 100%;
+  max-width: 80%;
+  max-height: 80%;
   object-fit: contain;
 }
 
 /* TEXTO */
 .cert-item p {
-  margin-top: 15px;
+  margin-top: 10px;
   font-size: 14px;
+  max-width: 160px;
 }
 
-/* 🔦 SCANNER */
-.cert-card::before {
+/* SCANNER EFFECT */
+.cert-card::after {
   content: "";
   position: absolute;
-  top: -120%;
+  top: -100%;
   left: 0;
   width: 100%;
-  height: 80px;
-
+  height: 200%;
   background: linear-gradient(
-    to bottom,
     transparent,
-    rgba(56,189,248,0.2),
-    rgba(56,189,248,0.4),
-    rgba(56,189,248,0.2),
+    rgba(56,189,248,0.3),
     transparent
   );
-
-  transform: rotate(10deg);
   opacity: 0;
 }
 
-.cert-item.scan .cert-card::before {
-  animation: scanMove 1.2s ease-in-out;
+.cert-item.scan .cert-card::after {
+  animation: scan 1.2s linear;
 }
 
-@keyframes scanMove {
-  0% { top: -120%; opacity: 0; }
-  15% { opacity: 1; }
-  100% { top: 120%; opacity: 0; }
+@keyframes scan {
+  0% { top: -100%; opacity: 1; }
+  100% { top: 100%; opacity: 0; }
 }
 
 /* ========================= */
@@ -264,42 +245,41 @@ p {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.85);
-  justify-content: center;
+  background: rgba(2,6,23,0.95);
   align-items: center;
+  justify-content: center;
+  z-index: 999;
 }
 
 .modal-content {
-  background: #0b0f14;
+  background: #020617;
   padding: 30px;
   border-radius: 12px;
-  width: 400px;
+  max-width: 500px;
   text-align: center;
-  border: 1px solid rgba(56,189,248,0.2);
+  border: 1px solid rgba(56,189,248,0.3);
 }
 
 .close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
   cursor: pointer;
-  float: right;
 }
 
 .validated {
   margin-top: 20px;
-  color: #38bdf8;
-  font-weight: bold;
-  animation: glow 1.5s infinite alternate;
+  color: #22c55e;
 }
 
-@keyframes glow {
-  from { opacity: 0.6; }
-  to { opacity: 1; text-shadow: 0 0 10px #38bdf8; }
-}
-
+/* ========================= */
 /* LOADER TERMINAL */
+/* ========================= */
+
 .loader-content {
   font-family: monospace;
   color: #38bdf8;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.6;
 }
 
@@ -310,4 +290,65 @@ p {
 
 @keyframes blink {
   50% { opacity: 0; }
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width: 768px){
+
+  .container {
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .text,
+  .media {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .media img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .experience-grid {
+    flex-direction: column;
+  }
+
+  .experience-column {
+    width: 100%;
+  }
+
+  /* CERTIFICAÇÕES MOBILE */
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .cert-card {
+    width: 110px;
+    height: 110px;
+  }
+
+  .cert-item p {
+    font-size: 13px;
+  }
+
 }
