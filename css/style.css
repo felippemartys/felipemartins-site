@@ -332,6 +332,15 @@ p {
     object-fit: cover;
   }
 
+  /* Experiências - Actionline e Betta em coluna */
+  .experience-grid {
+    flex-direction: column;
+  }
+
+  .experience-column {
+    width: 100%;
+  }
+
   /* Certificados no mobile */
   .cert-item {
     flex: 0 0 100%;
