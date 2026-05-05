@@ -97,25 +97,36 @@ actionline_title:"ACTIONLINE",
 
 actionline_1_role:"Analista de Suporte Jr",
 actionline_1_time:"2017 - 2018",
-actionline_1_desc:"Suporte técnico em telecom com foco em VoIP.",
+actionline_1_desc:`Atuação em suporte técnico de telecomunicações com foco em atendimento de incidentes de voz (VoIP) e infraestrutura de comunicação corporativa.`,
 
 actionline_2_role:"Analista de Telecomunicações Jr",
 actionline_2_time:"2018 - 2019",
-actionline_2_desc:"Atuação em cenários críticos com análise avançada de falhas.",
+actionline_2_desc:`Evolução para atuação em cenários mais críticos, com foco em análise avançada de falhas e suporte a integrações de sistemas de voz.
+
+• Diagnóstico de falhas SIP
+• Análise de qualidade de chamadas
+• Suporte a incidentes críticos`,
 
 betta_title:"BETTA GROUP",
 
-betta_1_role:"Analista Avaya e Integração",
+betta_1_role:"Analista Avaya e Integração de Telecom",
 betta_1_time:"2019 - 2020",
-betta_1_desc:"Suporte em integração de soluções de voz.",
+betta_1_desc:`Atuação em incidentes de integração de soluções de voz e suporte a ambientes de alta complexidade.`,
 
-betta_2_role:"Suporte Pleno",
+betta_2_role:"Sustentação de Suporte Pleno",
 betta_2_time:"2020 - 2022",
-betta_2_desc:"Troubleshooting avançado VoIP.",
+betta_2_desc:`Suporte a ambientes corporativos de voz e troubleshooting avançado de plataformas VoIP.`,
 
 betta_3_role:"Especialista de Conectividade",
 betta_3_time:"2022 - Atual",
-betta_3_desc:"Projetos VoIP e análise SIP avançada."
+betta_3_desc:`Atuação em projetos VoIP (NICE CX, SIP, SBC KHOMP e Oracle).
+
+Responsável por troubleshooting avançado de VoIP e análise de sinalização SIP.
+
+• Sustentação de ambientes VoIP corporativos
+• Call flow SIP ponta a ponta
+• SBCs e gateways
+• Incidentes críticos`
 },
 
 // ================= EN =================
@@ -173,25 +184,36 @@ actionline_title:"ACTIONLINE",
 
 actionline_1_role:"Support Analyst Jr",
 actionline_1_time:"2017 - 2018",
-actionline_1_desc:"Telecom technical support focused on VoIP.",
+actionline_1_desc:`Telecom technical support focused on VoIP incident handling and corporate communication infrastructure.`,
 
 actionline_2_role:"Telecom Analyst Jr",
 actionline_2_time:"2018 - 2019",
-actionline_2_desc:"Advanced troubleshooting in critical environments.",
+actionline_2_desc:`Evolution into more critical environments, focusing on advanced failure analysis and voice system integration support.
+
+• SIP failure diagnosis
+• Call quality analysis
+• Critical incident support`,
 
 betta_title:"BETTA GROUP",
 
-betta_1_role:"Avaya & Integration Analyst",
+betta_1_role:"Avaya & Telecom Integration Analyst",
 betta_1_time:"2019 - 2020",
-betta_1_desc:"Voice integration support.",
+betta_1_desc:`Worked on voice integration incidents and complex environments support.`,
 
-betta_2_role:"Support Analyst",
+betta_2_role:"Senior Support Engineer",
 betta_2_time:"2020 - 2022",
-betta_2_desc:"Advanced VoIP troubleshooting.",
+betta_2_desc:`Corporate VoIP support and advanced troubleshooting.`,
 
 betta_3_role:"Connectivity Specialist",
 betta_3_time:"2022 - Present",
-betta_3_desc:"VoIP projects and SIP analysis."
+betta_3_desc:`VoIP projects (NICE CX, SIP, KHOMP SBC and Oracle SBC).
+
+Responsible for advanced VoIP troubleshooting and SIP signaling analysis.
+
+• Corporate VoIP environments support
+• End-to-end SIP call flow analysis
+• SBCs and gateways
+• Critical incident handling`
 },
 
 // ================= ES =================
@@ -239,25 +261,36 @@ actionline_title:"ACTIONLINE",
 
 actionline_1_role:"Analista Soporte Jr",
 actionline_1_time:"2017 - 2018",
-actionline_1_desc:"Soporte telecom enfocado en VoIP.",
+actionline_1_desc:`Soporte técnico en telecomunicaciones enfocado en incidentes de voz (VoIP) e infraestructura corporativa.`,
 
 actionline_2_role:"Analista Telecom Jr",
 actionline_2_time:"2018 - 2019",
-actionline_2_desc:"Troubleshooting avanzado.",
+actionline_2_desc:`Evolución a entornos más críticos con análisis avanzado de fallas y soporte de integración de voz.
+
+• Diagnóstico SIP
+• Análisis de calidad de llamadas
+• Soporte a incidentes críticos`,
 
 betta_title:"BETTA GROUP",
 
-betta_1_role:"Analista Avaya",
+betta_1_role:"Analista Avaya e Integración Telecom",
 betta_1_time:"2019 - 2020",
-betta_1_desc:"Integración de voz.",
+betta_1_desc:`Soporte en incidentes de integración de voz y entornos complejos.`,
 
-betta_2_role:"Soporte",
+betta_2_role:"Soporte Pleno",
 betta_2_time:"2020 - 2022",
-betta_2_desc:"VoIP troubleshooting.",
+betta_2_desc:`Soporte en ambientes VoIP corporativos y troubleshooting avanzado.`,
 
-betta_3_role:"Especialista Conectividade",
-betta_3_time:"2022 - Atual",
-betta_3_desc:"Projetos VoIP."
+betta_3_role:"Especialista en Conectividad",
+betta_3_time:"2022 - Actual",
+betta_3_desc:`Proyectos VoIP (NICE CX, SIP, SBC KHOMP y Oracle).
+
+Responsable de troubleshooting avanzado y análisis SIP.
+
+• Soporte de ambientes VoIP
+• Flujo SIP end-to-end
+• SBCs y gateways
+• Incidentes críticos`
 }
 
 };
