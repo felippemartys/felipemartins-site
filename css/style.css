@@ -281,30 +281,35 @@ p {
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .container { flex-direction: column; padding: 30px 20px; gap: 40px; text-align: center; }
-  .text, .media { width: 100%; }
-  h1 { font-size: 32px; }
-  h2 { font-size: 22px; }
-  p { font-size: 15px; line-height: 1.7; }
-  .experience-grid { flex-direction: column; }
-  .experience-column { width: 100%; }
 
-  /* Certificados 1 por linha */
-  .cert-grid { flex-direction: column; align-items: center; gap: 20px; }
-  .cert-item { flex: 0 0 110px; }
+  /* CORREÇÃO IMAGENS MOBILE */
+  .section .container{
+    flex-direction: column !important;
+    align-items: center;
+  }
 
-  /* Ajuste específico para seções Khomp e AWS para ocupar largura maior */
-  .section.right .media img,
-  .section.left .media img {
-    max-width: 90%; /* Garante que ocupem mais espaço */
+  .section.right .container{
+    flex-direction: column !important;
+  }
+
+  .media{
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .media img{
+    width: 100%;
+    max-width: 100%;
     height: auto;
   }
-}
 
-/* ========================= */
-/* MOBILE - Ajuste imagens Khomp e AWS */
-@media (max-width: 768px) {
-  /* Ajuste para as imagens AWS e Khomp ocuparem maior largura no mobile */
+  .text{
+    width: 100% !important;
+    text-align: center;
+  }
+
+  /* Ajuste específico para seções Khomp e AWS para ocupar largura maior */
   .section.right .media img,
   .section.left .media img {
     max-width: 90%; /* Garante que ocupem mais espaço */
