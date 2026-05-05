@@ -281,43 +281,54 @@ p {
 
 /* MOBILE */
 @media (max-width: 768px) {
-  /* Alteração do layout para coluna no mobile */
-  .section .container{
-    flex-direction: column !important;
-    align-items: center;
-  }
-
-  .section.right .container{
-    flex-direction: column !important;
-  }
-
-  .media{
-    width: 100% !important;
-    display: flex;
-    justify-content: center;
-  }
-
-  .media img{
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-  }
-
-  .text{
-    width: 100% !important;
+  /* Layout ajustado para o mobile */
+  .container {
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 40px;
     text-align: center;
   }
 
-  /* Ajuste para as imagens Khomp e AWS ocuparem toda a largura no mobile */
-  .section.right .media img,
-  .section.left .media img {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
+  .text, .media {
+    width: 100%;
   }
 
-  /* Garante que as imagens ocupem toda a largura do container */
-  .media img {
-    object-fit: cover !important;
+  /* Ajuste do título */
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* Certificados 1 por linha */
+  .cert-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .cert-item {
+    flex: 0 0 100%;
+  }
+
+  /* Ajuste para a foto */
+  .hero-img img {
+    max-width: 100%;
+  }
+
+  /* Ajustes para Khomp e AWS */
+  .section.right .media img,
+  .section.left .media img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
   }
 }
