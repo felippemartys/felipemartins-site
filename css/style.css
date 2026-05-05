@@ -296,10 +296,11 @@ p {
   /* Ajuste específico para seções Khomp e AWS para ocupar largura maior */
   .section.right .media img,
   .section.left .media img {
-    max-width: 90%;
+    max-width: 90%; /* Garante que ocupem mais espaço */
     height: auto;
   }
 }
+
 /* ========================= */
 /* MOBILE - Ajuste imagens Khomp e AWS */
 @media (max-width: 768px) {
