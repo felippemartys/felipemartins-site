@@ -1,4 +1,3 @@
-nao, eu quero manter os idiomas e os textos como estava anteriormente assim:
 
 // ==========================
 // ESPERA DOM CARREGAR (ESSENCIAL)
