@@ -352,3 +352,35 @@ p {
   }
 
 }
+/* ========================= */
+/* CORREÇÃO IMAGENS MOBILE */
+/* ========================= */
+@media (max-width: 768px){
+
+  .section .container{
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  .section.right .container{
+    flex-direction: column !important;
+  }
+
+  .media{
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .media img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .text{
+    width: 100% !important;
+    text-align: center;
+  }
+
+}
