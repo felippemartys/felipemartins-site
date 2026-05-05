@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initObserver();
   initScroll();
-  initBackground();
 
   setLang(localStorage.getItem("lang") || "pt");
 
