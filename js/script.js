@@ -83,21 +83,18 @@ aws_title:"AWS & Automação",
 aws_desc:`Atuação com serviços de armazenamento e automação.
 
 • Gerenciamento de buckets S3
-• Criação de rotinas automatizadas com Syncovery
-• Integração entre sistemas via transferência de arquivos
+• Criação de rotinas automatizadas
 • Monitoramento e análise de logs
-• Troubleshooting de falhas em pipelines automatizados
-• Garantia de integridade e consistência de dados`,
+• Troubleshooting de pipelines
+• Garantia de integridade de dados`,
 
 avaya_title:"Avaya (CM, CMS, SMGR)",
 avaya_desc:`Experiência em ambientes corporativos de voz.
 
-• Configuração de vetores, VDN e troncos SIP no Avaya CM
-• Monitoramento e relatórios via CMS
-• Administração via Session Manager (SMGR)
-• Análise de chamadas e fluxos de atendimento
-• Troubleshooting de falhas em produção
-• Diagnóstico de problemas de sinalização e roteamento`,
+• Configuração de vetores, VDN e troncos SIP
+• Monitoramento via CMS
+• Administração via SMGR
+• Troubleshooting em produção`,
 
 experience_title:"Experiência Profissional",
 
@@ -105,33 +102,167 @@ actionline_title:"ACTIONLINE",
 
 actionline_1_role:"Analista de Suporte Jr",
 actionline_1_time:"2017 - 2018",
-actionline_1_desc:`Atuação em suporte técnico de telecomunicações com foco em atendimento de incidentes de voz (VoIP) e infraestrutura de comunicação corporativa.`,
+actionline_1_desc:"Suporte técnico em telecom com foco em VoIP.",
 
 actionline_2_role:"Analista de Telecomunicações Jr",
 actionline_2_time:"2018 - 2019",
-actionline_2_desc:`Evolução para atuação em cenários mais críticos.
-
-• Diagnóstico de falhas SIP
-• Análise de qualidade de chamadas
-• Suporte a incidentes críticos`,
+actionline_2_desc:"Atuação em cenários críticos com análise avançada de falhas.",
 
 betta_title:"BETTA GROUP",
 
-betta_1_role:"Analista Avaya e Integração de Telecom",
+betta_1_role:"Analista Avaya e Integração",
 betta_1_time:"2019 - 2020",
-betta_1_desc:`Atuação em incidentes de integração de soluções de voz.`,
+betta_1_desc:"Suporte em integração de soluções de voz.",
 
-betta_2_role:"Sustentação de Suporte Pleno",
+betta_2_role:"Suporte Pleno",
 betta_2_time:"2020 - 2022",
-betta_2_desc:`Suporte a ambientes corporativos de voz.`,
+betta_2_desc:"Troubleshooting avançado VoIP.",
 
 betta_3_role:"Especialista de Conectividade",
 betta_3_time:"2022 - Atual",
-betta_3_desc:`Atuação em projetos VoIP com troubleshooting avançado.
+betta_3_desc:"Projetos VoIP e análise SIP avançada."
+},
 
-• SBCs e gateways
-• Call flow SIP ponta a ponta
-• Incidentes críticos`
+// ================= EN =================
+en:{
+nome:"Felipe Martins",
+
+specialties_title:"Specialties",
+
+sobre:`Professional with over 9 years of experience in telecommunications, working in mission-critical environments with high availability.
+
+Specialist in advanced VoIP troubleshooting, SIP signaling analysis, real-time failure investigation, and support of corporate and carrier platforms.
+
+Strong experience identifying complex issues involving latency, packet loss, codec failures, authentication, and call routing.`,
+
+khomp_title:"Khomp & Oracle SBC",
+khomp_desc:`Deep experience in voice environments using SBCs and gateways.
+
+• SIP call flow analysis
+• Advanced SIP debugging
+• Packet capture using Wireshark
+• Authentication troubleshooting
+• RTP media issues
+• Routing and carrier interconnection
+• Critical incident response`,
+
+cloud_title:"Cloud, NICE CX & Neotel",
+cloud_desc:`Experience with cloud omnichannel platforms.
+
+• NICE CX configuration
+• Neotel NXperience expertise
+• Voice flow design
+• API integrations
+• VoIP troubleshooting
+• Architecture analysis`,
+
+aws_title:"AWS & Automation",
+aws_desc:`Experience with storage and automation.
+
+• S3 management
+• Automation routines
+• Log monitoring
+• Pipeline troubleshooting`,
+
+avaya_title:"Avaya (CM, CMS, SMGR)",
+avaya_desc:`Corporate voice environment experience.
+
+• SIP trunk configuration
+• CMS monitoring
+• SMGR administration
+• Production troubleshooting`,
+
+experience_title:"Professional Experience",
+
+actionline_title:"ACTIONLINE",
+
+actionline_1_role:"Support Analyst Jr",
+actionline_1_time:"2017 - 2018",
+actionline_1_desc:"Telecom technical support focused on VoIP.",
+
+actionline_2_role:"Telecom Analyst Jr",
+actionline_2_time:"2018 - 2019",
+actionline_2_desc:"Advanced troubleshooting in critical environments.",
+
+betta_title:"BETTA GROUP",
+
+betta_1_role:"Avaya & Integration Analyst",
+betta_1_time:"2019 - 2020",
+betta_1_desc:"Voice integration support.",
+
+betta_2_role:"Support Analyst",
+betta_2_time:"2020 - 2022",
+betta_2_desc:"Advanced VoIP troubleshooting.",
+
+betta_3_role:"Connectivity Specialist",
+betta_3_time:"2022 - Present",
+betta_3_desc:"VoIP projects and SIP analysis."
+},
+
+// ================= ES =================
+es:{
+nome:"Felipe Martins",
+
+specialties_title:"Especialidades",
+
+sobre:`Profesional con más de 9 años de experiencia en telecomunicaciones en entornos críticos de alta disponibilidad.
+
+Especialista en troubleshooting VoIP, análisis SIP y diagnóstico en tiempo real.
+
+Experiencia en latencia, pérdida de paquetes, fallas de codec y enrutamiento.`,
+
+khomp_title:"Khomp & Oracle SBC",
+khomp_desc:`Experiencia en entornos de voz con SBCs.
+
+• Análisis de call flow SIP
+• Debug SIP
+• Captura con Wireshark
+• Problemas de autenticación
+• RTP troubleshooting`,
+
+cloud_title:"Cloud, NICE CX & Neotel",
+cloud_desc:`Experiencia en plataformas cloud omnicanal.
+
+• Configuración NICE CX
+• Neotel NXperience
+• Integraciones API
+• Troubleshooting VoIP`,
+
+aws_title:"AWS y Automatización",
+aws_desc:`Experiencia en almacenamiento y automatización.
+
+• Gestión S3
+• Automatización
+• Logs y monitoreo`,
+
+avaya_title:"Avaya",
+avaya_desc:`Experiencia en plataformas de voz corporativa.`,
+
+experience_title:"Experiencia Profesional",
+
+actionline_title:"ACTIONLINE",
+
+actionline_1_role:"Analista Soporte Jr",
+actionline_1_time:"2017 - 2018",
+actionline_1_desc:"Soporte telecom enfocado en VoIP.",
+
+actionline_2_role:"Analista Telecom Jr",
+actionline_2_time:"2018 - 2019",
+actionline_2_desc:"Troubleshooting avanzado.",
+
+betta_title:"BETTA GROUP",
+
+betta_1_role:"Analista Avaya",
+betta_1_time:"2019 - 2020",
+betta_1_desc:"Integración de voz.",
+
+betta_2_role:"Soporte",
+betta_2_time:"2020 - 2022",
+betta_2_desc:"VoIP troubleshooting.",
+
+betta_3_role:"Especialista Conectividad",
+betta_3_time:"2022 - Actual",
+betta_3_desc:"Proyectos VoIP."
 }
 
 };
