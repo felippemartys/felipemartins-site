@@ -292,35 +292,27 @@ p {
     flex-direction: column !important;
   }
 
-  /* Garantir que a imagem vai abaixo do texto */
-  .section.left .media,
-  .section.right .media {
+  /* Ajuste para o layout no mobile */
+  .media {
     width: 100% !important;
     display: block;
-    margin-top: 20px; /* Ajuste o espaçamento entre o texto e a imagem */
+    margin-top: 20px; /* Dá espaço entre o texto e a imagem */
   }
 
-  .media img {
+  /* As imagens da Khomp e AWS devem ficar com o mesmo comportamento */
+  .section.left .media img,
+  .section.right .media img {
     width: 100%;
     height: auto;
-    object-fit: cover; /* Ajusta a imagem para preencher o espaço de maneira proporcional */
+    object-fit: cover; /* Ajusta as imagens proporcionalmente */
   }
 
   .text {
     width: 100% !important;
     text-align: center;
   }
-
-  /* As imagens da Khomp e AWS devem ter o mesmo comportamento */
-  .section.left .media img,
-  .section.right .media img {
-    width: 100%;
-    height: auto;
-    object-fit: contain; /* As imagens não ficam distorcidas e mantêm a proporção */
-  }
 }
 
-/* Ajustes no título e no texto no mobile */
 h1 {
   font-size: 32px;
 }
