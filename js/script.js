@@ -391,6 +391,11 @@ const certData = {
     title: "Cybersecurity",
     text: "Introdução à cibersegurança com foco em proteção de redes e análise de ameaças."
   }
+  "oracle-sbc": {
+  title: "Oracle Communications SBC (Training)",
+  text: "Treinamento preparatório focado em Oracle Communications Session Border Controller (SBC), abordando conceitos de roteamento SIP, segurança de borda, manipulação de signaling e troubleshooting em ambientes VoIP.",
+  warning: "Este certificado NÃO é oficial da Oracle. Trata-se de um curso preparatório realizado via Udemy."
+  }
 };
 
 function openCert(key){
