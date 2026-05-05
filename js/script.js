@@ -36,7 +36,6 @@ function initObserver(){
   sections.forEach(s=>observer.observe(s));
 }
 
-
 // ==========================
 // TRADUÇÕES
 // ==========================
@@ -256,9 +255,9 @@ betta_2_role:"Soporte",
 betta_2_time:"2020 - 2022",
 betta_2_desc:"VoIP troubleshooting.",
 
-betta_3_role:"Especialista Conectividad",
-betta_3_time:"2022 - Actual",
-betta_3_desc:"Proyectos VoIP."
+betta_3_role:"Especialista Conectividade",
+betta_3_time:"2022 - Atual",
+betta_3_desc:"Projetos VoIP."
 }
 
 };
