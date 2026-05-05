@@ -292,18 +292,18 @@ p {
     flex-direction: column !important;
   }
 
-  /* Ajuste para garantir que o texto esteja acima da imagem no mobile */
-  .media {
+  /* Garantir que a imagem vai abaixo do texto */
+  .section.left .media,
+  .section.right .media {
     width: 100% !important;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px; /* Dá um espaço entre o texto e a imagem */
+    display: block;
+    margin-top: 20px; /* Ajuste o espaçamento entre o texto e a imagem */
   }
 
   .media img {
     width: 100%;
-    max-width: 100%;
     height: auto;
+    object-fit: cover; /* Ajusta a imagem para preencher o espaço de maneira proporcional */
   }
 
   .text {
@@ -311,54 +311,51 @@ p {
     text-align: center;
   }
 
-  /* Certificando-se de que a imagem ocupa toda a largura disponível */
+  /* As imagens da Khomp e AWS devem ter o mesmo comportamento */
   .section.left .media img,
   .section.right .media img {
     width: 100%;
     height: auto;
-    object-fit: cover; /* Garante que a imagem cubra o container de forma proporcional */
+    object-fit: contain; /* As imagens não ficam distorcidas e mantêm a proporção */
   }
 }
 
-  /* Ajuste do título */
-  h1 {
-    font-size: 32px;
-  }
-
-  h2 {
-    font-size: 22px;
-  }
-
-  p {
-    font-size: 15px;
-    line-height: 1.7;
-  }
-
-  /* Certificados 1 por linha */
-  .cert-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .cert-item {
-    flex: 0 0 100%;
-  }
-
-
-  /* Experiências - Actionline e Betta em coluna */
-  .experience-grid {
-    flex-direction: column;
-  }
-
-  .experience-column {
-    width: 100%;
-  }
-
-  /* Certificados no mobile */
-  .cert-item {
-    flex: 0 0 100%;
-    max-width: 300px; /* Ajuste o tamanho para evitar que fiquem muito pequenos */
-  }
+/* Ajustes no título e no texto no mobile */
+h1 {
+  font-size: 32px;
 }
 
+h2 {
+  font-size: 22px;
+}
+
+p {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Certificados 1 por linha */
+.cert-grid {
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.cert-item {
+  flex: 0 0 100%;
+}
+
+/* Experiências - Actionline e Betta em coluna */
+.experience-grid {
+  flex-direction: column;
+}
+
+.experience-column {
+  width: 100%;
+}
+
+/* Certificados no mobile */
+.cert-item {
+  flex: 0 0 100%;
+  max-width: 300px; /* Ajuste o tamanho para evitar que fiquem muito pequenos */
+}
