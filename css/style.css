@@ -40,10 +40,10 @@ canvas {
 
 .container {
   display: flex;
-  max-width: 1600px;
+  max-width: 100%; /* Altera para ocupar toda a largura */
   margin: auto;
-  padding: 0 80px;
-  gap: 80px;
+  padding: 0 10px; /* Menos espaço nas laterais */
+  gap: 20px; /* Diminui o gap */
   align-items: center;
 }
 
@@ -54,7 +54,7 @@ canvas {
 /* ========================= */
 /* TEXT */
 .text {
-  width: 45%;
+  width: 100%; /* Texto ocupa toda a largura */
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -70,27 +70,27 @@ canvas {
 
 /* TITLES */
 h1 { 
-  font-size: 56px; /* Tamanho original */
+  font-size: 64px; /* Tamanho aumentado */
   margin-bottom: 30px; 
   line-height: 1.2; 
 }
 
 h2 { 
-  font-size: 28px; 
+  font-size: 32px; /* Tamanho aumentado */
   margin-top: 40px; 
   margin-bottom: 15px; 
   color: #38bdf8; 
 }
 
 h3 { 
-  font-size: 20px; 
+  font-size: 24px; /* Tamanho aumentado */
   margin-top: 20px; 
   margin-bottom: 5px; 
 }
 
 /* TEXT */
 p {
-  font-size: 18px;
+  font-size: 22px; /* Aumento no tamanho do texto */
   line-height: 2;
   margin-bottom: 15px;
   color: #9ca3af;
@@ -118,19 +118,20 @@ p {
 
 /* IMAGE */
 .media { 
-  width: 55%; 
+  width: 100%; /* Imagens ocupam toda a largura */
 }
 
 .media img { 
-  width: 100%; 
-  max-width: 700px; 
+  width: 100%;
+  max-width: 100%;
+  height: auto;
   display: block; 
   margin: auto; 
 }
 
 /* HERO IMAGE */
 .hero-img img { 
-  max-width: 500px; 
+  max-width: 100%; /* Ocupa toda a largura */
 }
 
 /* EXPERIENCE */
