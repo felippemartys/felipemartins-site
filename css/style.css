@@ -70,27 +70,27 @@ canvas {
 
 /* TITLES */
 h1 { 
-  font-size: 64px; /* Tamanho aumentado */
+  font-size: 72px; /* Aumento considerável */
   margin-bottom: 30px; 
   line-height: 1.2; 
 }
 
 h2 { 
-  font-size: 32px; /* Tamanho aumentado */
+  font-size: 38px; /* Tamanho aumentado */
   margin-top: 40px; 
   margin-bottom: 15px; 
   color: #38bdf8; 
 }
 
 h3 { 
-  font-size: 24px; /* Tamanho aumentado */
+  font-size: 28px; /* Tamanho aumentado */
   margin-top: 20px; 
   margin-bottom: 5px; 
 }
 
 /* TEXT */
 p {
-  font-size: 22px; /* Aumento no tamanho do texto */
+  font-size: 20px; /* Aumento no tamanho do texto */
   line-height: 2;
   margin-bottom: 15px;
   color: #9ca3af;
@@ -118,7 +118,7 @@ p {
 
 /* IMAGE */
 .media { 
-  width: 100%; /* Imagens ocupam toda a largura */
+  width: 50%; /* Ajuste a largura das imagens para desktop */
 }
 
 .media img { 
@@ -131,7 +131,7 @@ p {
 
 /* HERO IMAGE */
 .hero-img img { 
-  max-width: 100%; /* Ocupa toda a largura */
+  max-width: 60%; /* Reduz a largura da imagem no desktop */
 }
 
 /* EXPERIENCE */
