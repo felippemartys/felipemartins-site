@@ -40,10 +40,10 @@ canvas {
 
 .container {
   display: flex;
-  max-width: 100%; /* Altera para ocupar toda a largura */
+  max-width: 1600px;
   margin: auto;
-  padding: 0 10px; /* Menos espaço nas laterais */
-  gap: 20px; /* Diminui o gap */
+  padding: 0 80px;
+  gap: 80px;
   align-items: center;
 }
 
@@ -54,7 +54,7 @@ canvas {
 /* ========================= */
 /* TEXT */
 .text {
-  width: 100%; /* Texto ocupa toda a largura */
+  width: 45%;
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -69,28 +69,13 @@ canvas {
 }
 
 /* TITLES */
-h1 { 
-  font-size: 72px; /* Aumento considerável */
-  margin-bottom: 30px; 
-  line-height: 1.2; 
-}
-
-h2 { 
-  font-size: 38px; /* Tamanho aumentado */
-  margin-top: 40px; 
-  margin-bottom: 15px; 
-  color: #38bdf8; 
-}
-
-h3 { 
-  font-size: 28px; /* Tamanho aumentado */
-  margin-top: 20px; 
-  margin-bottom: 5px; 
-}
+h1 { font-size: 56px; margin-bottom: 30px; line-height: 1.2; }
+h2 { font-size: 28px; margin-top: 40px; margin-bottom: 15px; color: #38bdf8; }
+h3 { font-size: 20px; margin-top: 20px; margin-bottom: 5px; }
 
 /* TEXT */
 p {
-  font-size: 20px; /* Aumento no tamanho do texto */
+  font-size: 18px;
   line-height: 2;
   margin-bottom: 15px;
   color: #9ca3af;
@@ -117,22 +102,11 @@ p {
 }
 
 /* IMAGE */
-.media { 
-  width: 50%; /* Ajuste a largura das imagens para desktop */
-}
-
-.media img { 
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  display: block; 
-  margin: auto; 
-}
+.media { width: 55%; }
+.media img { width: 100%; max-width: 700px; display: block; margin: auto; }
 
 /* HERO IMAGE */
-.hero-img img { 
-  max-width: 60%; /* Reduz a largura da imagem no desktop */
-}
+.hero-img img { max-width: 500px; }
 
 /* EXPERIENCE */
 .experience-wrapper {
@@ -189,21 +163,18 @@ p {
 }
 
 /* IMAGEM PADRÃO */
-.cert-card img { 
-  max-width: 80%; 
-  max-height: 80%; 
-  object-fit: contain; 
-}
+.cert-card img { max-width: 80%; max-height: 80%; object-fit: contain; }
 
 /* TEXTO */
-.cert-item p { 
-  margin-top: 10px; 
-  font-size: 14px; 
-  max-width: 250px; 
-  text-align: center; 
+.cert-item p { margin-top: 10px; font-size: 14px; max-width: 250px; text-align: center; }
+
+.cert-item p {
+  margin-top: 10px;
+  font-size: 14px;
+  max-width: 250px;
+  text-align: center;
 }
 
-/* ALERTA ORACLE */
 .oracle-warning {
   margin-top: 12px;
   padding: 10px;
@@ -311,9 +282,7 @@ p {
 /* ========================= */
 /* RESPONSIVO */
 @media (max-width: 1024px) {
-  .cert-item { 
-    flex: 0 0 250px; /* Certificados lado a lado no desktop */
-  }
+  .cert-item { flex: 0 0 45%; }
 }
 
 /* ========================= */
@@ -329,62 +298,34 @@ p {
     flex-direction: column !important;
   }
 
-  /* Ajuste para o layout no mobile */
+  /* Ajuste para garantir que o texto esteja acima da imagem no mobile */
   .media {
     width: 100% !important;
-    display: block;
-    margin-top: 20px; /* Dá espaço entre o texto e a imagem */
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Dá um espaço entre o texto e a imagem */
   }
 
-  /* As imagens da Khomp e AWS devem ficar com o mesmo comportamento */
-  .section.left .media img,
-  .section.right .media img {
+  .media img {
     width: 100%;
+    max-width: 100%;
     height: auto;
-    object-fit: cover; /* Ajusta as imagens proporcionalmente */
   }
 
   .text {
     width: 100% !important;
     text-align: center;
   }
+
+  /* Certificando-se de que a imagem ocupa toda a largura disponível */
+  .section.left .media img,
+  .section.right .media img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Garante que a imagem cubra o container de forma proporcional */
+  }
 }
 
-h1 {
-  font-size: 32px;
-}
-
-h2 {
-  font-size: 22px;
-}
-
-p {
-  font-size: 15px;
-  line-height: 1.7;
-}
-
-/* Certificados 1 por linha */
-.cert-grid {
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.cert-item {
-  flex: 0 0 100%;
-}
-
-/* Experiências - Actionline e Betta em coluna */
-.experience-grid {
-  flex-direction: column;
-}
-
-.experience-column {
-  width: 100%;
-}
-
-/* Certificados no mobile */
-.cert-item {
-  flex: 0 0 100%;
-  max-width: 300px; /* Ajuste o tamanho para evitar que fiquem muito pequenos */
-}
+h1 { font-size: 56px; margin-bottom: 30px; line-height: 1.2; }
+h2 { font-size: 28px; margin-top: 40px; margin-bottom: 15px; color: #38bdf8; }
+p { font-size: 18px; line-height: 2; margin-bottom: 15px; color: #9ca3af; white-space: pre-line; }
