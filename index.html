@@ -6,6 +6,7 @@
   <title>Felipe Martins | Telecom Engineer</title>
 
   <link rel="stylesheet" href="css/style.css">
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <script defer src="js/script.js"></script>
@@ -13,6 +14,7 @@
 
 <body>
 
+<!-- LOADER -->
 <div id="loader">
   <div class="loader-content">
     <div class="spinner"></div>
@@ -23,6 +25,7 @@
 <!-- HERO -->
 <section class="section left show">
   <div class="container">
+
     <div class="text">
       <h1 data-key="nome"></h1>
 
@@ -36,8 +39,9 @@
     </div>
 
     <div class="media hero-img">
-      <img src="assets/sua-foto.png">
+      <img src="assets/sua-foto.png" alt="Felipe Martins">
     </div>
+
   </div>
 </section>
 
@@ -45,7 +49,7 @@
 <section class="section">
   <div class="container">
     <div class="text">
-      <h1 data-key="specialties_title"></h1>
+      <h1 class="specialties-mobile" data-key="specialties_title"></h1>
     </div>
   </div>
 </section>
@@ -53,156 +57,165 @@
 <!-- KHOMP -->
 <section class="section right">
   <div class="container">
+
     <div class="text">
       <h2 data-key="khomp_title"></h2>
       <p data-key="khomp_desc"></p>
     </div>
+
     <div class="media">
-      <img src="assets/khomp-sbc.png">
+      <img src="assets/khomp-sbc.png" alt="Khomp SBC">
     </div>
+
   </div>
 </section>
 
 <!-- CLOUD -->
 <section class="section left">
   <div class="container">
+
     <div class="text">
       <h2 data-key="cloud_title"></h2>
       <p data-key="cloud_desc"></p>
     </div>
+
     <div class="media">
-      <img src="assets/cloud-1.png">
+      <img src="assets/cloud-1.png" alt="Cloud">
     </div>
+
   </div>
 </section>
 
 <!-- AWS -->
 <section class="section right">
   <div class="container">
+
     <div class="text">
       <h2 data-key="aws_title"></h2>
       <p data-key="aws_desc"></p>
     </div>
+
     <div class="media">
-      <img src="assets/cloud-2.png">
+      <img src="assets/cloud-2.png" alt="AWS">
     </div>
+
   </div>
 </section>
 
 <!-- AVAYA -->
 <section class="section left">
   <div class="container">
+
     <div class="text">
       <h2 data-key="avaya_title"></h2>
       <p data-key="avaya_desc"></p>
     </div>
+
     <div class="media">
-      <img src="assets/avaya.png">
+      <img src="assets/avaya.png" alt="Avaya">
     </div>
-  </div>
-</section>
 
-<!-- EXPERIÊNCIA -->
-<section class="section">
-  <div class="experience-wrapper">
-    <h1 class="experience-title" data-key="experience_title"></h1>
-    <div class="experience-grid">
-      <div class="experience-column">
-        <h2 data-key="actionline_title"></h2>
-
-        <h3 data-key="actionline_1_role"></h3>
-        <p data-key="actionline_1_time"></p>
-        <p data-key="actionline_1_desc"></p>
-
-        <h3 data-key="actionline_2_role"></h3>
-        <p data-key="actionline_2_time"></p>
-        <p data-key="actionline_2_desc"></p>
-      </div>
-
-      <div class="experience-column">
-        <h2 data-key="betta_title"></h2>
-
-        <h3 data-key="betta_1_role"></h3>
-        <p data-key="betta_1_time"></p>
-        <p data-key="betta_1_desc"></p>
-
-        <h3 data-key="betta_2_role"></h3>
-        <p data-key="betta_2_time"></p>
-        <p data-key="betta_2_desc"></p>
-
-        <h3 data-key="betta_3_role"></h3>
-        <p data-key="betta_3_time"></p>
-        <p data-key="betta_3_desc"></p>
-      </div>
-    </div>
   </div>
 </section>
 
 <!-- CERTIFICAÇÕES -->
 <section class="section">
   <div class="cert-wrapper">
+
     <div class="cert-header">
       <h2>Certificações Técnicas</h2>
-      <p>Certificações que validam experiência prática em análise de redes, VoIP e infraestrutura de telecom.</p>
+
+      <p>
+        Certificações focadas em VoIP, SBCs,
+        troubleshooting SIP, análise de redes e telecom.
+      </p>
     </div>
 
     <div class="cert-grid">
-      <!-- 1 -->
+
+      <!-- Wireshark -->
       <div class="cert-item" onclick="openCert('wireshark')">
         <div class="cert-card">
           <img src="assets/wireshark.png">
         </div>
-        <p>Wireshark – Análise avançada de pacotes SIP/RTP</p>
+        <p>Wireshark – Análise avançada SIP/RTP</p>
       </div>
 
-      <!-- 2 -->
+      <!-- Khomp KMG -->
       <div class="cert-item" onclick="openCert('khomp-kmg')">
         <div class="cert-card">
           <img src="assets/khomp-kmg.png">
         </div>
-        <p>Khomp KMG – Gateways SIP/E1 e call flow</p>
+        <p>Khomp KMG – Gateway SIP/E1</p>
       </div>
 
-      <!-- 3 -->
+      <!-- Khomp vSBC -->
       <div class="cert-item" onclick="openCert('khomp-vsbc')">
         <div class="cert-card">
           <img src="assets/khomp-vsbc.png">
         </div>
-        <p>Khomp vSBC – Controle e segurança VoIP</p>
+        <p>Khomp vSBC – SBC VoIP</p>
       </div>
 
-      <!-- 4 -->
+      <!-- Oracle -->
       <div class="cert-item" onclick="openCert('oracle-sbc')">
         <div class="cert-card">
-          <img src="assets/oraclesbc.png" alt="Oracle SBC">
+          <img src="assets/oraclesbc.png">
         </div>
-        <p>Oracle SBC – Treinamento preparatório focado em Oracle Communications SBC</p>
-        <div class="oracle-warning">
-          ✔ Certificação NÃO é oficial da Oracle. Trata-se de um curso preparatório realizado via Udemy.
-        </div>
+        <p>Oracle SBC – Training</p>
       </div>
 
-      <!-- 5 -->
+      <!-- Cyber -->
       <div class="cert-item" onclick="openCert('cybersecurity')">
         <div class="cert-card">
           <img src="assets/cybersecurity.png">
         </div>
-        <p>Cybersecurity – Proteção de redes e análise de ameaças</p>
+        <p>Cybersecurity – Network Protection</p>
       </div>
+
     </div>
+
+    <!-- WHATSAPP -->
+    <div class="contact-area">
+
+      <a
+        href="https://wa.me/5511957915455"
+        target="_blank"
+        class="whatsapp-btn"
+      >
+        Entrar em contato via WhatsApp
+      </a>
+
+    </div>
+
   </div>
 </section>
 
 <!-- MODAL -->
-<p id="modalWarning" class="modal-warning"></p>
 <div id="certModal" class="modal">
+
   <div class="modal-content">
+
     <span class="close" onclick="closeCert()">&times;</span>
+
     <h2 id="modalTitle"></h2>
+
     <p id="modalText"></p>
-    <div class="validated">✔ Certificação Validada</div>
+
+    <div class="validated" id="modalValidated">
+      ✔ Certificação Validada
+    </div>
+
   </div>
+
 </div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>
+    Felipe Martins Telecom Engineering © Since 2025
+  </p>
+</footer>
 
 </body>
 </html>
