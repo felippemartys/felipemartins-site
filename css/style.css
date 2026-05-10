@@ -345,3 +345,68 @@ p {
     flex: 0 0 220px;
   }
 }
+/* ========================= */
+/* WHATSAPP */
+/* ========================= */
+
+.contact-area{
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.whatsapp-btn{
+  background: linear-gradient(135deg,#25d366,#1ebe5d);
+  color: white;
+  padding: 18px 34px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  transition: 0.3s;
+  box-shadow: 0 0 25px rgba(37,211,102,0.25);
+}
+
+.whatsapp-btn:hover{
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 0 35px rgba(37,211,102,0.45);
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+.footer{
+  width: 100%;
+  padding: 30px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.01);
+}
+
+.footer p{
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #64748b;
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width: 768px){
+
+  /* TITULO ESPECIALIDADES */
+  .specialties-mobile{
+    font-size: 34px !important;
+    line-height: 1.2;
+  }
+
+  .whatsapp-btn{
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+  }
+
+}
