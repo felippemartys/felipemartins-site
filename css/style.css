@@ -168,13 +168,6 @@ p {
 /* TEXTO */
 .cert-item p { margin-top: 10px; font-size: 14px; max-width: 250px; text-align: center; }
 
-.cert-item p {
-  margin-top: 10px;
-  font-size: 14px;
-  max-width: 250px;
-  text-align: center;
-}
-
 .oracle-warning {
   margin-top: 12px;
   padding: 10px;
@@ -280,14 +273,7 @@ p {
 @keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
 
 /* ========================= */
-/* RESPONSIVO */
-@media (max-width: 1024px) {
-  .cert-item { flex: 0 0 45%; }
-}
-
-/* ========================= */
-/* CORREÇÃO IMAGENS MOBILE */
-/* ========================= */
+/* RESPONSIVO - MOBILE */
 @media (max-width: 768px) {
   .section .container {
     flex-direction: column !important;
@@ -326,6 +312,36 @@ p {
   }
 }
 
-h1 { font-size: 56px; margin-bottom: 30px; line-height: 1.2; }
-h2 { font-size: 28px; margin-top: 40px; margin-bottom: 15px; color: #38bdf8; }
-p { font-size: 18px; line-height: 2; margin-bottom: 15px; color: #9ca3af; white-space: pre-line; }
+/* ========================= */
+/* RESPONSIVO - DESKTOP */
+@media (min-width: 1025px) {
+  .media {
+    width: 50%;
+  }
+  .text {
+    width: 50%;
+    font-size: 20px;
+  }
+  h1 { font-size: 64px; }
+  h2 { font-size: 32px; }
+  p { font-size: 20px; }
+
+  /* Experiências lado a lado */
+  .experience-grid {
+    flex-direction: row;
+  }
+
+  .experience-column {
+    width: 48%;
+  }
+
+  /* Certificados lado a lado */
+  .cert-grid {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .cert-item {
+    flex: 0 0 220px;
+  }
+}
